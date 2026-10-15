@@ -1,0 +1,156 @@
+/* Deney arayüzü. Uyaranların herkese aynı görünmesi için açık tema sabittir (koyu mod yok). */
+:root {
+  color-scheme: light;
+  --zemin: #F4F4F1;
+  --kart: #FFFFFF;
+  --metin: #1E2322;
+  --ikincil: #5A605D;
+  --cizgi: #E2E3DF;
+  --kenar: #D5D7D3;
+  --vurgu: #2F4B5C;
+  --vurgu-koyu: #1E3340;
+  --uyari: #8A4B12;
+}
+html, body { background: var(--zemin); }
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  color: var(--metin);
+}
+.jspsych-display-element { font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 16px; color: var(--metin); }
+.jspsych-content { width: 100%; max-width: 100%; text-align: left; }
+.jspsych-content-wrapper { align-items: flex-start; }
+
+/* Metin ekranları (onam, senaryo, anket) */
+.metin-ekran { max-width: 720px; margin: 40px auto; padding: 32px; background: var(--kart); border-radius: 12px; line-height: 1.55; text-align: left; box-sizing: border-box; }
+.metin-ekran.genis { max-width: 960px; }
+.metin-ekran h1 { font-size: 26px; margin: 0 0 16px; font-weight: 600; }
+.metin-ekran ul { padding-left: 20px; }
+.metin-ekran li { margin: 6px 0; }
+.metin-ekran .kucuk { font-size: 14px; color: var(--ikincil); }
+.onizleme-bandi { display: inline-block; margin: 0 0 12px; padding: 4px 10px; font-size: 12px; font-weight: 600; letter-spacing: .06em; background: #FCEFD9; color: var(--uyari); border-radius: 4px; }
+.onay { display: flex; gap: 10px; align-items: flex-start; margin-top: 20px; font-weight: 500; }
+.onay input { width: 20px; height: 20px; margin-top: 2px; }
+.alan-tablosu { border-collapse: collapse; margin: 12px 0 16px; }
+.alan-tablosu th, .alan-tablosu td { padding: 6px 24px 6px 0; border-bottom: 1px solid var(--cizgi); text-align: left; }
+.alan-tablosu th { font-size: 13px; color: var(--ikincil); font-weight: 500; }
+fieldset { border: 1px solid var(--cizgi); border-radius: 8px; margin: 0 0 16px; padding: 12px 16px 16px; }
+legend { font-weight: 600; padding: 0 6px; }
+label.blok input, label.blok select, label.blok textarea {
+  display: block; width: 100%; box-sizing: border-box; margin-top: 4px; padding: 10px 12px; min-height: 44px;
+  font: inherit; color: var(--metin); border: 1px solid var(--kenar); border-radius: 6px; background: #fff;
+}
+label.blok { display: block; margin: 0 0 16px; font-weight: 500; }
+fieldset.secenekler label { display: flex; align-items: center; gap: 8px; min-height: 36px; }
+fieldset.secenekler input { width: 18px; height: 18px; }
+.puanlar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
+.puanlar label { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--cizgi); }
+.puanlar input { width: 88px; min-height: 40px; padding: 6px 8px; font: inherit; border: 1px solid var(--kenar); border-radius: 6px; text-align: right; }
+.puan-toplam { margin-top: 16px; font-size: 18px; }
+.ozet-tablosu { border-collapse: collapse; width: 100%; font-size: 13px; }
+.ozet-tablosu th, .ozet-tablosu td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--cizgi); vertical-align: top; }
+.ozet-tablosu th { color: var(--ikincil); font-weight: 500; white-space: nowrap; }
+.uyari-ekran { max-width: 560px; margin: 80px auto; padding: 32px; background: var(--kart); border-radius: 12px; line-height: 1.55; }
+
+.jspsych-btn, #jspsych-survey-html-form-next {
+  min-height: 48px; padding: 0 24px; border: none; border-radius: 8px; background: var(--vurgu); color: #fff;
+  font: 600 15px "IBM Plex Sans", system-ui, sans-serif; cursor: pointer;
+}
+.jspsych-btn:hover, #jspsych-survey-html-form-next:hover { background: var(--vurgu-koyu); }
+#jspsych-survey-html-form-next:disabled { background: #9AA3A0; cursor: not-allowed; }
+#jspsych-survey-html-form { max-width: 720px; margin: 0 auto 40px; }
+#jspsych-survey-html-form .metin-ekran { margin-bottom: 16px; }
+#jspsych-survey-html-form-next { margin-left: 32px; }
+.jspsych-html-button-response-btngroup { justify-content: flex-start; max-width: 720px; margin: 0 auto 40px; padding-left: 32px; box-sizing: border-box; }
+
+/* Kart seçim ekranı */
+.ks-kok { box-sizing: border-box; max-width: 1240px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.ks-bas { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.ks-bas h2 { margin: 6px 0 4px; font-size: 26px; font-weight: 600; }
+.ks-alan { font-weight: 400; color: var(--ikincil); font-size: 20px; }
+.ks-ust { font-size: 12px; letter-spacing: .08em; font-weight: 600; color: var(--ikincil); }
+.ks-alt { font-size: 14px; color: var(--ikincil); }
+.ks-sayaclar { display: flex; flex-wrap: wrap; gap: 12px; }
+.ks-sayac { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 8px; padding: 12px 16px; min-width: 230px; display: flex; flex-direction: column; gap: 4px; }
+.ks-etiket { font-size: 13px; color: var(--ikincil); }
+.ks-buyuk { font-size: 18px; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.ks-yonerge { background: var(--kart); border-radius: 8px; padding: 12px 16px; font-size: 15px; }
+.ks-sekmeler { display: flex; flex-wrap: wrap; gap: 8px; }
+.ks-sekme { min-height: 44px; padding: 8px 16px; border: 1px solid var(--kenar); background: var(--kart); color: var(--ikincil); border-radius: 8px; font: 14px "IBM Plex Sans", system-ui, sans-serif; cursor: pointer; }
+.ks-sekme.ks-aktif { border: 2px solid var(--vurgu); color: var(--metin); font-weight: 600; }
+.ks-kartlar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.ks-kart { box-sizing: border-box; padding: 16px; background: var(--kart); border: 1px solid var(--kenar); border-radius: 10px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.ks-kart.ks-secili { border: 2px solid var(--vurgu); padding: 15px; }
+.ks-kart header { display: flex; flex-direction: column; gap: 4px; min-height: 92px; }
+.ks-kart h3 { margin: 0; font-size: 17px; line-height: 1.25; font-weight: 600; text-wrap: balance; }
+.ks-gorsel { display: block; width: 100%; height: 140px; border-radius: 8px; object-fit: cover; background-color: var(--cizgi); }
+.ks-kart dl { margin: 0; display: flex; flex-direction: column; }
+.ks-satir { display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-top: 1px solid var(--cizgi); }
+.ks-satir.ks-son { border-bottom: 1px solid var(--cizgi); }
+.ks-satir dt { font-size: 13px; color: var(--ikincil); }
+.ks-satir dd { margin: 0; font-size: 14px; display: flex; flex-direction: column; gap: 2px; }
+.ks-sayi { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+.ks-ikincil { font-size: 13px; color: var(--ikincil); }
+.ks-sec { margin-top: auto; min-height: 48px; border-radius: 8px; border: 1px solid var(--vurgu); background: var(--kart); color: var(--vurgu); font: 600 15px "IBM Plex Sans", system-ui, sans-serif; cursor: pointer; }
+.ks-secili .ks-sec { background: var(--vurgu); color: #fff; }
+.ks-alt-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+.ks-gezinti { display: flex; gap: 8px; }
+.ks-ikincil-btn { min-height: 44px; padding: 0 16px; border: 1px solid var(--kenar); background: var(--kart); color: var(--metin); border-radius: 8px; font: 14px "IBM Plex Sans", system-ui, sans-serif; cursor: pointer; }
+.ks-ikincil-btn:disabled { color: #A3A8A5; cursor: default; }
+.ks-bitir { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.ks-mesaj { margin: 0; font-size: 14px; color: var(--ikincil); }
+.ks-devam { min-height: 48px; padding: 0 24px; border: none; border-radius: 8px; background: var(--vurgu); color: #fff; font: 600 15px "IBM Plex Sans", system-ui, sans-serif; cursor: pointer; }
+.ks-devam:disabled { background: #9AA3A0; cursor: not-allowed; }
+.ks-tanim { margin: 0; font-size: 13px; color: var(--ikincil); }
+button:focus-visible { outline: 3px solid #E0A44B; outline-offset: 2px; }
+/* Ölçüt seçenekleri (yazı yok, yalnızca seçim) */
+fieldset.olcut { margin: 0 0 16px; padding: 10px 12px 12px; }
+fieldset.olcut legend { font-size: 14px; }
+.olcut-secenek { position: relative; display: block; margin-top: 6px; cursor: pointer; }
+.olcut-secenek input { position: absolute; left: 12px; top: 50%; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.olcut-secenek span { display: flex; align-items: center; min-height: 36px; padding: 6px 12px; box-sizing: border-box; border: 1px solid var(--kenar); border-radius: 6px; background: #fff; font-size: 14px; line-height: 1.25; }
+.olcut-secenek:hover span { border-color: var(--vurgu); }
+.olcut-secenek input:checked + span { border: 2px solid var(--vurgu); padding: 5px 11px; background: #E8EEF1; font-weight: 600; }
+.olcut-secenek input:focus-visible + span { outline: 3px solid var(--vurgu); outline-offset: 2px; }
+
+/* Aşama 1 paket özeti */
+.genis-form #jspsych-survey-html-form { max-width: 1240px; padding: 0 24px; box-sizing: border-box; }
+.genis-form #jspsych-survey-html-form-next { margin-left: 0; }
+.ozet-ekran { padding: 32px 0 8px; text-align: left; line-height: 1.5; }
+.ozet-ekran h1 { font-size: 26px; margin: 6px 0 8px; font-weight: 600; }
+.ozet-ekran > p { margin: 0 0 20px; max-width: 760px; }
+.ozet-toplamlar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+.ozet-toplamlar > div { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 8px; padding: 12px 16px; min-width: 230px; display: flex; flex-direction: column; gap: 4px; }
+.ozet-toplamlar span { font-size: 13px; color: var(--ikincil); }
+.ozet-toplamlar strong { font: 400 18px "IBM Plex Mono", ui-monospace, monospace; }
+.ozet-kartlar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+.ozet-kart { box-sizing: border-box; padding: 16px; background: var(--kart); border: 1px solid var(--kenar); border-radius: 10px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.ozet-kart h3 { margin: 4px 0 0; font-size: 17px; line-height: 1.25; font-weight: 600; text-wrap: balance; }
+.ozet-kart fieldset.olcut { margin: auto 0 0; padding: 12px 0 0; border: 0; }
+.ozet-kart fieldset.olcut legend { padding: 0 0 2px; }
+.ozet-degerler { margin: 4px 0 0; }
+.ozet-degerler > div { padding: 8px 0; border-top: 1px solid var(--cizgi); }
+.ozet-degerler > div:last-child { border-bottom: 1px solid var(--cizgi); }
+.ozet-degerler dt { font-size: 13px; color: var(--ikincil); }
+.ozet-degerler dd { margin: 2px 0 0; font: 14px "IBM Plex Mono", ui-monospace, monospace; }
+
+@media (max-width: 1100px) { .ks-kartlar, .ozet-kartlar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .ks-kartlar, .ozet-kartlar { grid-template-columns: minmax(0, 1fr); } .puanlar { grid-template-columns: minmax(0, 1fr); } }
+
+/* Yer tutucu yüzey dokuları: yalnızca stimuli.js'te "gorsel" boşsa kullanılır. Gerçek fotoğraflar img/ klasöründe. */
+.tex-hali { background-color: #6E7781; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.2) 0 1px, transparent 1px 60px), repeating-linear-gradient(90deg, rgba(0,0,0,.2) 0 1px, transparent 1px 60px), repeating-linear-gradient(45deg, rgba(255,255,255,.06) 0 2px, transparent 2px 5px); }
+.tex-linolyum { background-color: #9AA48C; background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1.5px), radial-gradient(rgba(0,0,0,.08) 1px, transparent 1.5px); background-size: 7px 7px, 11px 11px; }
+.tex-laminat-parke { background-color: #B08356; background-image: repeating-linear-gradient(0deg, rgba(60,35,15,.35) 0 1px, transparent 1px 27px), repeating-linear-gradient(90deg, transparent 0 118px, rgba(60,35,15,.3) 118px 119px); }
+.tex-porselen { background-color: #CFCDC8; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 2px, transparent 2px 70px), repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 2px, transparent 2px 70px); }
+.tex-boya { background-color: #EEEAE2; }
+.tex-pet-kece { background-color: #6F8190; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px); }
+.tex-mese-panel { background-color: #B48A5F; background-image: repeating-linear-gradient(90deg, rgba(60,35,15,.35) 0 2px, transparent 2px 64px); }
+.tex-duvar-karo { background-color: #F1F0EC; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.12) 0 2px, transparent 2px 44px), repeating-linear-gradient(90deg, rgba(0,0,0,.12) 0 2px, transparent 2px 70px); }
+.tex-alcipan { background-color: #F2F1EE; }
+.tex-tas-yunu { background-color: #ECEBE7; background-image: repeating-linear-gradient(0deg, #C9CBC8 0 3px, transparent 3px 75px), repeating-linear-gradient(90deg, #C9CBC8 0 3px, transparent 3px 75px); }
+.tex-ahsap-yunu { background-color: #C8B28C; background-image: repeating-linear-gradient(30deg, rgba(90,60,30,.25) 0 1px, transparent 1px 4px), repeating-linear-gradient(-40deg, rgba(255,255,255,.15) 0 1px, transparent 1px 5px); }
+.tex-aluminyum { background-color: #E6E7E8; background-image: radial-gradient(rgba(0,0,0,.25) 1px, transparent 1.6px); background-size: 6px 6px; }
+.tex-laminat-tezgah { background-color: #C29A6B; background-image: repeating-linear-gradient(0deg, rgba(80,50,20,.18) 0 1px, transparent 1px 7px); }
+.tex-kompakt { background-color: #3A3D3F; }
+.tex-kuvars { background-color: #F1F0EC; background-image: radial-gradient(rgba(120,115,105,.18) 1px, transparent 1.5px); background-size: 9px 9px; }
+.tex-paslanmaz { background-color: #C7CBCE; background-image: repeating-linear-gradient(90deg, rgba(255,255,255,.25) 0 1px, transparent 1px 3px); }
