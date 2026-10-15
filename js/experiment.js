@@ -74,7 +74,8 @@
         filename: function () { return katilimciId + ".csv"; },
         wait_message: '<div class="metin-ekran"><p>Yanıtlarınız kaydediliyor. Lütfen sayfayı kapatmayın.</p></div>',
         done_message: '<div class="metin-ekran"><h1>Teşekkürler</h1><p>Yanıtlarınız kaydedildi. Bu sayfayı kapatabilirsiniz.</p>' +
-          '<p class="kucuk">Katılımcı kodunuz: <strong>' + katilimciId + '</strong>. Verilerinizin silinmesini isterseniz bu kodu ' + A.ONAM.eposta + ' adresine iletin.</p></div>',
+          '<p class="kucuk">Katılımcı kodunuz: <strong>' + katilimciId + '</strong>. Verilerinizin silinmesini isterseniz bu kodu ' + A.ONAM.eposta + ' adresine iletin.</p>' +
+          '<p class="kucuk">Kısa görüşmeye gönüllü olduysanız, bu kodu aynı adrese e-postayla gönderin. Kodu göndermediğiniz sürece kim olduğunuz bilinmez.</p></div>',
         on_save: function (sonuc) {
           if (!sonuc.ok) {
             jsPsych.getDisplayElement().innerHTML = '<div class="metin-ekran"><h1>Kayıt sırasında bir sorun oluştu</h1>' +
@@ -89,7 +90,11 @@
     extensions: uzantilar,
     on_finish: function () { if (onizleme) onizlemeSonu(); }
   });
-  jsPsych.data.addProperties({ katilimci_id: katilimciId, onizleme: onizleme, ekran_genisligi: window.innerWidth, kart_sirasi: kartSirasi });
+  jsPsych.data.addProperties({
+    katilimci_id: katilimciId, onizleme: onizleme, ekran_genisligi: window.innerWidth, kart_sirasi: kartSirasi,
+    baslangic_zamani: new Date().toISOString(),           // oturum (ders saati) bilgisi için
+    deneme: url.has("deneme")                            // araştırmacının kendi denemeleri: linkin sonuna ?deneme
+  });
 
   function veri(bolum) { return jsPsych.data.get().filter({ bolum: bolum }).values()[0]; }
 
@@ -299,6 +304,9 @@
       '<label class="blok">Sınıfınız <select name="sinif" required><option value="">Seçin</option><option>1</option><option>2</option><option>3</option><option>4</option><option>Yüksek lisans</option></select></label>' +
       '<fieldset class="secenekler"><legend>Malzeme bilgisi dersi aldınız mı?</legend><label><input type="radio" name="malzeme_dersi" value="Evet" required> Evet</label><label><input type="radio" name="malzeme_dersi" value="Hayır"> Hayır</label></fieldset>' +
       '<fieldset class="secenekler"><legend>Sürdürülebilirlik veya çevre konulu bir ders aldınız mı?</legend><label><input type="radio" name="cevre_dersi" value="Evet" required> Evet</label><label><input type="radio" name="cevre_dersi" value="Hayır"> Hayır</label><label><input type="radio" name="cevre_dersi" value="Emin değilim"> Emin değilim</label></fieldset>' +
+      '<fieldset class="secenekler"><legend>Seçimleriniz hakkında araştırmacıyla 20–25 dakikalık kısa bir görüşme yapmak ister misiniz?</legend>' +
+      '<label><input type="radio" name="gorusme" value="Evet" required> Evet, görüşmeye gönüllüyüm</label><label><input type="radio" name="gorusme" value="Hayır"> Hayır</label>' +
+      '<p class="kucuk">Gönüllü olsanız bile yanıtlarınız anonim kalır; yalnızca katılımcı kodunuzu kendiniz e-postayla gönderirseniz sizinle iletişime geçilebilir.</p></fieldset>' +
       '</div>',
     button_label: "Bitir"
   });
@@ -325,7 +333,7 @@
         farkindalik: fk.farkindalik,
         kavrama_yanit: kv.kavrama, kavrama_dogru: kv.kavrama === zemin[0].kod,
         dikkat_yanit: kv.dikkat, dikkat_gecti: kv.dikkat === "Turuncu",
-        sinif: dm.sinif, malzeme_dersi: dm.malzeme_dersi, cevre_dersi: dm.cevre_dersi
+        sinif: dm.sinif, malzeme_dersi: dm.malzeme_dersi, cevre_dersi: dm.cevre_dersi, gorusme_gonullu: dm.gorusme
       };
       YUZEYLER.forEach(function (y) {
         var en = y.secenekler.slice().sort(function (x, z) { return x.karbon_m2 - z.karbon_m2; })[0].kod;

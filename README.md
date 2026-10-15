@@ -77,6 +77,21 @@ Her katılımcı için tek satırlık `ozet_tablosu.csv` oluşur. Başlıca süt
 | `farkindalik` | Hipotez farkındalığı (açık uçlu, tek soru) |
 | `kavrama_dogru`, `dikkat_gecti` | Kavrama ve dikkat kontrolleri |
 | `sinif`, `malzeme_dersi`, `cevre_dersi` | Kovaryatlar |
+| `gorusme_gonullu` | Görüşmeye gönüllü olup olmadığı (iletişim için katılımcının kodunu e-postayla göndermesi gerekir) |
+
+Ayrıca `gorusme_gonullu` (görüşmeye gönüllü mü), `baslangic_zamani` (oturumu belirlemek için) ve `deneme` sütunları vardır.
+
+**Kendi denemeleriniz:** Linkin sonuna `?deneme` ekleyerek açtığınız oturumlar "deneme" olarak işaretlenir; `birlestir.py` bunları ana tabloya almaz, `deneme_kayitlari.csv` dosyasına ayırır.
+
+### Analiz
+
+```
+python analiz/analiz.py <klasor>/ozet_tablosu.csv --min-sure 8 [--farkindalik kodlama.csv]
+```
+
+Ön-kayıttaki bütün analizleri (H1 birincil; H2a, H2b, H3a, H3b ikincil, Holm düzeltmeli; duyarlılık ve keşifsel analizler) çalıştırır ve `sonuclar/` klasörüne `rapor.md`, denge tablosu, yüzey tablosu, katılımcı akışı ve Şekil 3'ü yazar. `--min-sure` pilottan sonra ön-kayda yazılan süre eşiğidir (dakika). Farkındalık duyarlılık analizi için "katilimci_id,farkindalik_dogru" sütunlu bir kodlama dosyası verilir.
+
+Kodu veri gelmeden sınamak için: `python analiz/simulasyon.py sahte.csv` (sahte veri üretir; `--etki 0` ile etkisiz veri).
 
 Sayfayı yarıda bırakan katılımcıların verisi DataPipe tarafından 24 saat içinde `.partial.json` olarak yazılır; birleştirme betiği bunları sayar (CONSORT akış şeması için).
 
@@ -111,4 +126,6 @@ js/experiment.js               deney akışı ve özet satırı
 lib/                           jsPsych kütüphaneleri
 analiz/paket_tablosu.py        256 paket tablosu ve bütçe kontrolü
 analiz/birlestir.py            katılımcı dosyalarını tek tabloya çevirir
+analiz/analiz.py               ön-kayıtlı analizler, tablolar, Şekil 3
+analiz/simulasyon.py           analiz kodunu sınamak için sahte veri
 ```

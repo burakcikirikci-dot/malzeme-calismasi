@@ -41,6 +41,13 @@ for s in ozetler:
 # Başka denemelere ait, özet satırında hep boş kalan sütunları çıkar
 alanlar = [k for k in alanlar if any((s.get(k) or "") != "" for s in ozetler)]
 
+# Araştırmacının kendi denemeleri (?deneme) ve önizleme kayıtları ana tabloya girmez, ayrı dosyaya yazılır
+denemeler = [s for s in ozetler if s.get("deneme") == "true" or s.get("onizleme") == "true"]
+ozetler = [s for s in ozetler if s not in denemeler]
+if denemeler:
+    with (klasor / "deneme_kayitlari.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        w = csv.DictWriter(f, fieldnames=alanlar, extrasaction="ignore"); w.writeheader(); w.writerows(denemeler)
+
 cikti = klasor / "ozet_tablosu.csv"
 with cikti.open("w", newline="", encoding="utf-8-sig") as f:
     w = csv.DictWriter(f, fieldnames=alanlar, extrasaction="ignore")
@@ -52,5 +59,5 @@ for s in ozetler:
 kismi = len(list(klasor.glob("*.partial.json")))
 print(f"{len(ozetler)} tamamlanmış katılımcı yazıldı: {cikti}")
 print("Grup dağılımı: " + ", ".join(f"{g}: {n}" for g, n in sorted(gruplar.items())))
-print(f"Önizleme verisi: {sum(1 for s in ozetler if s.get('onizleme') == 'true')}")
+print(f"Ayrılan deneme/önizleme kaydı: {len(denemeler)} (deneme_kayitlari.csv)")
 print(f"Özet satırı olmayan CSV: {len(eksik)} · Yarıda kalan oturum (.partial.json): {kismi}")
