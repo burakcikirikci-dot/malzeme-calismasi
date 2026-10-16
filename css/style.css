@@ -43,6 +43,8 @@ label.blok input, label.blok select, label.blok textarea {
 label.blok { display: block; margin: 0 0 16px; font-weight: 500; }
 fieldset.secenekler label { display: flex; align-items: center; gap: 8px; min-height: 36px; }
 fieldset.secenekler input { width: 18px; height: 18px; }
+fieldset.secenekler label.blok { display: block; min-height: 0; margin-top: 12px; }
+fieldset.secenekler label.blok input { width: 100%; height: auto; }
 .puanlar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; }
 .puanlar label { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--cizgi); }
 .puanlar input { width: 88px; min-height: 40px; padding: 6px 8px; font: inherit; border: 1px solid var(--kenar); border-radius: 6px; text-align: right; }

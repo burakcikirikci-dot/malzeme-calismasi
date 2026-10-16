@@ -75,7 +75,7 @@
         wait_message: '<div class="metin-ekran"><p>Yanıtlarınız kaydediliyor. Lütfen sayfayı kapatmayın.</p></div>',
         done_message: '<div class="metin-ekran"><h1>Teşekkürler</h1><p>Yanıtlarınız kaydedildi. Bu sayfayı kapatabilirsiniz.</p>' +
           '<p class="kucuk">Katılımcı kodunuz: <strong>' + katilimciId + '</strong>. Verilerinizin silinmesini isterseniz bu kodu ' + A.ONAM.eposta + ' adresine iletin.</p>' +
-          '<p class="kucuk">Kısa görüşmeye gönüllü olduysanız, bu kodu aynı adrese e-postayla gönderin. Kodu göndermediğiniz sürece kim olduğunuz bilinmez.</p></div>',
+          '</div>',
         on_save: function (sonuc) {
           if (!sonuc.ok) {
             jsPsych.getDisplayElement().innerHTML = '<div class="metin-ekran"><h1>Kayıt sırasında bir sorun oluştu</h1>' +
@@ -113,6 +113,7 @@
       '<li>Katılmak ya da katılmamak hiçbir dersinizin notunu etkilemez.</li>' +
       '<li>Doğru ya da yanlış yanıt yoktur; kendi tasarım yargınızla seçim yapın.</li>' +
       '<li>' + A.ONAM.veri_saklama + '</li>' +
+      '<li>Görevin sonunda kısa bir görüşmeye gönüllü olup olmadığınız sorulur. Gönüllü olursanız e-posta adresiniz istenir; bu durumda yanıtlarınız anonim değil gizli tutulur ve adresiniz çalışma bitince silinir. Gönüllü olmak zorunlu değildir.</li>' +
       '<li>Çalışma ' + A.ONAM.etik_kurul + ' onayı ile yürütülmektedir.</li>' +
       '<li>Sorularınız için: ' + A.ONAM.eposta + '</li></ul>' +
       '<label class="onay"><input type="checkbox" name="onam" value="evet" required> Bilgilendirme metnini okudum, gönüllü olarak katılmayı kabul ediyorum.</label>' +
@@ -306,9 +307,22 @@
       '<fieldset class="secenekler"><legend>Sürdürülebilirlik veya çevre konulu bir ders aldınız mı?</legend><label><input type="radio" name="cevre_dersi" value="Evet" required> Evet</label><label><input type="radio" name="cevre_dersi" value="Hayır"> Hayır</label><label><input type="radio" name="cevre_dersi" value="Emin değilim"> Emin değilim</label></fieldset>' +
       '<fieldset class="secenekler"><legend>Seçimleriniz hakkında araştırmacıyla 20–25 dakikalık kısa bir görüşme yapmak ister misiniz?</legend>' +
       '<label><input type="radio" name="gorusme" value="Evet" required> Evet, görüşmeye gönüllüyüm</label><label><input type="radio" name="gorusme" value="Hayır"> Hayır</label>' +
-      '<p class="kucuk">Gönüllü olsanız bile yanıtlarınız anonim kalır; yalnızca katılımcı kodunuzu kendiniz e-postayla gönderirseniz sizinle iletişime geçilebilir.</p></fieldset>' +
+      '<div id="gorusme-iletisim" hidden><label class="blok">Size ulaşabileceğimiz e-posta adresi <input type="email" name="gorusme_eposta" maxlength="120" autocomplete="email"></label>' +
+      '<p class="kucuk">Adresiniz yalnızca görüşme daveti için kullanılır, yanıtlarınızdan ayrı bir listede tutulur ve çalışma bitince silinir. Adres verdiğinizde yanıtlarınız anonim değil gizli olur: kimliğiniz yalnızca araştırmacı tarafından bilinir, hiçbir yerde açıklanmaz. Her profilden yalnızca birkaç kişi görüşmeye davet edilecektir.</p></div>' +
+      '<p class="kucuk">“Hayır” derseniz yanıtlarınız tamamen anonim kalır.</p></fieldset>' +
       '</div>',
-    button_label: "Bitir"
+    button_label: "Bitir",
+    on_load: function () {
+      var kutu = document.getElementById("gorusme-iletisim");
+      var eposta = kutu.querySelector('input[name="gorusme_eposta"]');
+      document.querySelectorAll('input[name="gorusme"]').forEach(function (r) {
+        r.addEventListener("change", function () {
+          var evet = r.value === "Evet" && r.checked;
+          kutu.hidden = !evet; eposta.required = evet;
+          if (!evet) eposta.value = "";
+        });
+      });
+    }
   });
 
   // 12. Özet satırı (analiz için tek satır)
@@ -333,7 +347,7 @@
         farkindalik: fk.farkindalik,
         kavrama_yanit: kv.kavrama, kavrama_dogru: kv.kavrama === zemin[0].kod,
         dikkat_yanit: kv.dikkat, dikkat_gecti: kv.dikkat === "Turuncu",
-        sinif: dm.sinif, malzeme_dersi: dm.malzeme_dersi, cevre_dersi: dm.cevre_dersi, gorusme_gonullu: dm.gorusme
+        sinif: dm.sinif, malzeme_dersi: dm.malzeme_dersi, cevre_dersi: dm.cevre_dersi, gorusme_gonullu: dm.gorusme, gorusme_eposta: dm.gorusme === "Evet" ? (dm.gorusme_eposta || "").trim() : ""
       };
       YUZEYLER.forEach(function (y) {
         var en = y.secenekler.slice().sort(function (x, z) { return x.karbon_m2 - z.karbon_m2; })[0].kod;

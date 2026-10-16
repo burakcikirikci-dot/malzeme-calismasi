@@ -48,6 +48,15 @@ if denemeler:
     with (klasor / "deneme_kayitlari.csv").open("w", newline="", encoding="utf-8-sig") as f:
         w = csv.DictWriter(f, fieldnames=alanlar, extrasaction="ignore"); w.writeheader(); w.writerows(denemeler)
 
+# Görüşme gönüllülerinin e-posta adresleri analiz tablosundan ayrılır, ayrı bir listeye yazılır
+iletisim = [{"katilimci_id": s.get("katilimci_id"), "grup": s.get("grup"), "degisen_yuzey_sayisi": s.get("degisen_yuzey_sayisi"),
+             "a1_karbon": s.get("a1_karbon"), "gorusme_eposta": s.get("gorusme_eposta")}
+            for s in ozetler if (s.get("gorusme_eposta") or "").strip()]
+if iletisim:
+    with (klasor / "gorusme_iletisim_GIZLI.csv").open("w", newline="", encoding="utf-8-sig") as f:
+        w = csv.DictWriter(f, fieldnames=list(iletisim[0])); w.writeheader(); w.writerows(iletisim)
+alanlar = [k for k in alanlar if k != "gorusme_eposta"]
+
 cikti = klasor / "ozet_tablosu.csv"
 with cikti.open("w", newline="", encoding="utf-8-sig") as f:
     w = csv.DictWriter(f, fieldnames=alanlar, extrasaction="ignore")
@@ -60,4 +69,5 @@ kismi = len(list(klasor.glob("*.partial.json")))
 print(f"{len(ozetler)} tamamlanmış katılımcı yazıldı: {cikti}")
 print("Grup dağılımı: " + ", ".join(f"{g}: {n}" for g, n in sorted(gruplar.items())))
 print(f"Ayrılan deneme/önizleme kaydı: {len(denemeler)} (deneme_kayitlari.csv)")
+print(f"Görüşme gönüllüsü (e-posta bırakan): {len(iletisim)} (gorusme_iletisim_GIZLI.csv; analiz tablosunda e-posta yok)")
 print(f"Özet satırı olmayan CSV: {len(eksik)} · Yarıda kalan oturum (.partial.json): {kismi}")

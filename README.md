@@ -77,7 +77,7 @@ Her katılımcı için tek satırlık `ozet_tablosu.csv` oluşur. Başlıca süt
 | `farkindalik` | Hipotez farkındalığı (açık uçlu, tek soru) |
 | `kavrama_dogru`, `dikkat_gecti` | Kavrama ve dikkat kontrolleri |
 | `sinif`, `malzeme_dersi`, `cevre_dersi` | Kovaryatlar |
-| `gorusme_gonullu` | Görüşmeye gönüllü olup olmadığı (iletişim için katılımcının kodunu e-postayla göndermesi gerekir) |
+| `gorusme_gonullu` | Görüşmeye gönüllü olup olmadığı. Gönüllülerin e-posta adresleri `birlestir.py` tarafından analiz tablosundan çıkarılır ve `gorusme_iletisim_GIZLI.csv` dosyasına yazılır (grup ve değişiklik bilgisiyle birlikte, profil seçimi için). Bu dosyayı paylaşmayın, çalışma bitince silin. |
 
 Ayrıca `gorusme_gonullu` (görüşmeye gönüllü mü), `baslangic_zamani` (oturumu belirlemek için) ve `deneme` sütunları vardır.
 
