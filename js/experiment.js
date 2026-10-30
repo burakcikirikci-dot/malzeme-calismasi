@@ -49,7 +49,8 @@
       k += o.karbon_m2 * y.alan_m2;
       r += o.karbon_m2 * y.alan_m2 * Math.ceil(K.referans_sure_yil / o.omur_yil);
     });
-    return { maliyet: m, karbon: k, referans_karbon: r };
+    var y2 = function (x) { return Math.round(x * 100) / 100; };
+    return { maliyet: Math.round(m), karbon: y2(k), referans_karbon: y2(r) };
   }
   // Tüm olası paketlerin (4 yüzey × 4 seçenek = 256) karbon aralığı (normalize endeks için)
   var KARBON_ARALIK = (function () {
@@ -152,7 +153,7 @@
     stimulus: function () {
       var satirlar = YUZEYLER.map(function (y) { return "<tr><td>" + y.ad + "</td><td>" + fmt.format(y.alan_m2) + " m²</td></tr>"; }).join("");
       return '<div class="metin-ekran">' +
-        (onizleme ? '<p class="onizleme-bandi">ÖNİZLEME · ' + (grup === "A" ? "Grup A: karbon bilgisi 2. aşamada" : "Grup B: karbon bilgisi baştan") + ' · 11 kalemin fiyatı geçici</p>' : "") +
+        (onizleme ? '<p class="onizleme-bandi">ÖNİZLEME · ' + (grup === "A" ? "Grup A: karbon bilgisi 2. aşamada" : "Grup B: karbon bilgisi baştan") + ' · fiyatların bir kısmı yurt dışı referansı, görsellerin bir kısmı geçici</p>' : "") +
         '<h1>Senaryo: ' + A.SENARYO.baslik + '</h1>' +
         '<p><strong>Kullanıcı:</strong> ' + A.SENARYO.kullanici + '</p>' +
         '<p><strong>Konsept:</strong> ' + A.SENARYO.konsept + '</p>' +

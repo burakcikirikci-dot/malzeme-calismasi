@@ -19,7 +19,7 @@ Belirli bir grubu denemek için adres çubuğundaki dosya yolunun sonuna `?grup=
 
 | Dosya | Ne yapılacak |
 | --- | --- |
-| `js/stimuli.js` | 16 kartın verileri: karbon ve ömür değerleri kaynaklı (`karbon_kaynak`); **11 kalemin fiyatı geçici** (`fiyat_kaynak` alanında "GEÇİCİ" yazanlar), teklif gelince değiştirilecek. Dosya geçerli JSON kalmalı (tırnaklar, virgüller). |
+| `js/stimuli.js` | 16 kartın verileri (30.10.2026 malzeme tablosundan): karbon A1–A3 GWP-fossil, ürün kütlesine oranlanmış (`karbon_kaynak`); fiyatlar KDV hariç malzeme bedeli, Türkiye fiyatı yoksa yurt dışı fiyatı KDV'den arındırılmış (`fiyat_kaynak`). Türkiye teklifi gelen kalemlerde fiyatı güncelleyin. Dosya geçerli JSON kalmalı. |
 | `js/config.js` | Köşeli parantezli tüm alanlar: konsept, kullanıcı tanımı, onam metni bilgileri (üniversite/bölüm adı dahil), etik kurul kararı, e-posta. |
 | `img/` (yeni klasör) | Gerçek malzeme fotoğrafları. Kartta `"gorsel": "img/zemin-a.jpg"` yazın. Önerilen boyut 1200 × 520 piksel, hepsi aynı ışık ve ölçekte. |
 
@@ -97,7 +97,8 @@ Sayfayı yarıda bırakan katılımcıların verisi DataPipe tarafından 24 saat
 
 ## 6. Pilottan önce kontrol listesi
 
-- [ ] `stimuli.js` içinde "GEÇİCİ" yazan fiyat kalmadı ve `paket_tablosu.py` uyarı vermiyor.
+- [ ] Yurt dışı fiyatı kullanılan kalemler için Türkiye teklifi alındı ya da bilerek bırakıldı; `paket_tablosu.py` uyarı vermiyor.
+- [ ] 16 kartın gerçek görselleri `img/` klasöründe ve `stimuli.js`teki `gorsel` alanları doğru.
 - [ ] LCA uzmanı karbon değerlerini kontrol etti (raporun "LCA uzmanına sorulacaklar" bölümü).
 - [ ] `config.js` içinde köşeli parantezli alan kalmadı.
 - [ ] Onam metni etik kurulun onayladığı metinle birebir aynı.

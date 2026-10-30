@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 KOK = pathlib.Path(__file__).resolve().parent.parent
-YUZEYLER = ["zemin", "duvar", "tavan", "tezgah"]
+YUZEYLER = ["zemin", "duvar", "tavan", "masa"]
 OLCUTLER = ["Estetik ve konsept uyumu", "Maliyet", "Dayanıklılık", "Kullanım ömrü", "Bakım kolaylığı", "Çevresel etki", "Diğer"]
 
 ap = argparse.ArgumentParser()

@@ -25,7 +25,7 @@ import statsmodels.formula.api as smf
 from statsmodels.stats.multitest import multipletests
 
 KOK = pathlib.Path(__file__).resolve().parent.parent
-YUZEYLER = ["zemin", "duvar", "tavan", "tezgah"]
+YUZEYLER = ["zemin", "duvar", "tavan", "masa"]
 RNG = np.random.default_rng(20261015)
 
 
