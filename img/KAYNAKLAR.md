@@ -1,24 +1,27 @@
 # Kart görsellerinin kaynakları
 
-Fotoğraflar Wikimedia Commons'tan alındı, 800 × 400 piksele kırpıldı; bazılarında hafif kontrast dengelemesi yapıldı.
-Lisans ve yazar bilgisi her dosyanın Commons sayfasında. Yayından önce bu bilgileri makalenin ek materyaline yazın.
-Pilottan önce önerilen: 16 malzemenin numunelerini aynı ışık ve arka planda fotoğraflayıp bu dosyaların yerine koymak.
+Görseller ekibin Google Drive klasöründen (her liste kodu için bir alt klasör, 3 görsel) alındı ve
+960 × 480 piksele (2:1) kırpıldı. Renk ve kontrast değiştirilmedi. Kırpma betiği: `kirp.py` (deponun dışında, isteğe bağlı).
 
-| Dosya | Malzeme | Commons dosyası | Not |
-| --- | --- | --- | --- |
-| zemin-a.jpg | Halı karo | https://commons.wikimedia.org/wiki/File:Gfp-carpet-texture.jpg | Hal; ofis karosu değil, görünüş benzeri |
-| zemin-b.jpg | Linolyum | https://commons.wikimedia.org/wiki/File:Samples_of_linoleum,_colours.jpg | Tek renk numune kırpıldı |
-| zemin-c.jpg | Laminat parke | https://commons.wikimedia.org/wiki/File:Linoleum_2.jpg | Dosya adı linolyum; görünüş ahşap desenli esnek kaplama |
-| zemin-d.jpg | Porselen karo | https://commons.wikimedia.org/wiki/File:Gres_tiles.jpg | |
-| duvar-a.jpg | Boya | https://commons.wikimedia.org/wiki/File:White_wall.jpg | |
-| duvar-b.jpg | PET keçe panel | https://commons.wikimedia.org/wiki/File:Felt_of_wool_and_rayon.jpg | Yün/viskon keçe; görünüş benzeri |
-| duvar-c.jpg | Meşe kaplamalı MDF | https://commons.wikimedia.org/wiki/File:Oak_Texture_-_5106733699_c1d5b0df29_b.jpg | |
-| duvar-d.jpg | Seramik duvar karosu | https://commons.wikimedia.org/wiki/File:Old_bathroom_with_subway_tiles.JPG | |
-| tavan-a.jpg | Alçı levha tavan | https://commons.wikimedia.org/wiki/File:Downlight.jpg | |
-| tavan-b.jpg | Taş yünü karo | https://commons.wikimedia.org/wiki/File:Suspended-ceiling-0a.jpg | Mineral lifli karo |
-| tavan-c.jpg | Ahşap yünü panel | https://commons.wikimedia.org/wiki/File:Holzwolle-Leichtbauplatte_Laibung.JPG | |
-| tavan-d.jpg | Alüminyum tavan karosu | https://commons.wikimedia.org/wiki/File:Asbestos_acoustic_ceiling.jpg | Delikli tavan karosu; malzemesi alüminyum değil, görünüş benzeri |
-| tezgah-a.jpg | Laminat tezgâh | https://commons.wikimedia.org/wiki/File:Laminate_Kitchen_Countertop_Beige.jpg | |
-| tezgah-b.jpg | Kompakt laminat | (çizim) | Fotoğraf bulunamadı; numune fotoğrafıyla değiştirilmeli |
-| tezgah-c.jpg | Kuvars kompozit | https://commons.wikimedia.org/wiki/File:Quartz_(Engineered_Stone)_for_Countertops_01.jpg | |
-| tezgah-d.jpg | Paslanmaz çelik | https://commons.wikimedia.org/wiki/File:Brushed_metal.jpg | |
+Görseller üretici kataloglarından/web sitelerinden derlenmiştir. Makalede yayımlanacaksa (örneğin ek materyalde
+ekran görüntüsü), her üreticiden kullanım izni alın ya da kendi numune fotoğraflarınızla değiştirin.
+Yalnızca deney ekranında gösterilmesi için de kaynağın bu dosyada kayıtlı olması önerilir.
+
+| Dosya | Kart | Liste kodu | Drive'daki kaynak dosya | Not |
+| --- | --- | --- | --- | --- |
+| zemin-a.jpg | Halı karo | Z1 | 02_HN810_Limestone_HN830_Cobalt | Yalnızca HN810 Limestone zemin bölümü kırpıldı (Cobalt şeritler ve kişi dışarıda) |
+| zemin-b.jpg | Linolyum | Z2 | 02_3369_Titanium_mekan | Mekân fotoğrafının zemin bölümü; kaynak küçük (540 px), büyütüldü |
+| zemin-c.jpg | Balıksırtı laminat parke | Z3 | 01_Urun_EL2152_baliksirti | |
+| zemin-d.jpg | Beton görünümlü porselen karo | Z4 | 01_Urun_GMB_U709_60x60 | |
+| duvar-a.jpg | Su bazlı iç cephe boyası | D1 | 02_Uygulama_10679_Washed_Linen | Kaynak 752 px, büyütüldü |
+| duvar-b.jpg | Kabartmalı PET akustik panel | D2 | 01_Zen_duvar_acik_renk | |
+| duvar-c.jpg | Ahşap kaplamalı akustik lamel | D3 | 02_Urun_Rib_R_panel | |
+| duvar-d.jpg | Vinil duvar kaplaması | D4 | 03_Clay_acik_renk_mekan | Mekân fotoğrafının duvar bölümü; yakın doku görselinde yaprak çok yer kaplıyordu |
+| tavan-a.jpg | Delikli akustik alçı levha | T1 | 01_Urun_8_18_R | |
+| tavan-b.jpg | Taş yünü akustik tavan paneli | T2 | 01_Urun_Blanka | |
+| tavan-c.jpg | Ahşap yünü akustik panel | T3 | 01_Urun_AK01_detay | |
+| tavan-d.jpg | Çizgisel alüminyum asma tavan | T4 | 01_84R_SERI_beyaz_degil | Aynı seri, farklı renk (klasör adına göre beyaz değil) |
+| masa-a.jpg | Melamin kaplı yonga levha tabla | M1 | 01_Urun_U702_ST9 | |
+| masa-b.jpg | Kompakt laminat tabla | M2 | 03_Max_Compact_Interior_SERI_mobilya | Aynı seri, farklı renk; 0741 Birch Grey ürün görseli indirilemedi |
+| masa-c.jpg | Meşe kaplamalı MDF tabla | M3 → muadil | Wikimedia Commons: File:Oak_Texture_-_5106733699_c1d5b0df29_b.jpg | Listede M3 linolyum tabla; muadil ürün kullanıldığı için Drive'daki linolyum görselleri kullanılmadı |
+| masa-d.jpg | Geri dönüştürülmüş tekstil tabla | M4 | 03_Really_Cotton_White_Grey_KARMA | Öndeki beyaz tabla kırpıldı; kaynak 1500 px, kırpım büyütüldü |

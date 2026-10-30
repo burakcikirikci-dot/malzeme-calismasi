@@ -21,7 +21,7 @@ Belirli bir grubu denemek için adres çubuğundaki dosya yolunun sonuna `?grup=
 | --- | --- |
 | `js/stimuli.js` | 16 kartın verileri (30.10.2026 malzeme tablosundan): karbon A1–A3 GWP-fossil, ürün kütlesine oranlanmış (`karbon_kaynak`); fiyatlar KDV hariç malzeme bedeli, Türkiye fiyatı yoksa yurt dışı fiyatı KDV'den arındırılmış (`fiyat_kaynak`). Türkiye teklifi gelen kalemlerde fiyatı güncelleyin. Dosya geçerli JSON kalmalı. |
 | `js/config.js` | Köşeli parantezli tüm alanlar: konsept, kullanıcı tanımı, onam metni bilgileri (üniversite/bölüm adı dahil), etik kurul kararı, e-posta. |
-| `img/` (yeni klasör) | Gerçek malzeme fotoğrafları. Kartta `"gorsel": "img/zemin-a.jpg"` yazın. Önerilen boyut 1200 × 520 piksel, hepsi aynı ışık ve ölçekte. |
+| `img/` | Kart görselleri (`<yüzey>-<kod>.jpg`, 960 × 480). Kaynakları `img/KAYNAKLAR.md` dosyasında. Bir görseli değiştirmek için aynı adla yeni dosyayı koymak yeter. |
 
 Kartları değiştirdikten sonra bütçeyi kontrol edin:
 
@@ -98,7 +98,8 @@ Sayfayı yarıda bırakan katılımcıların verisi DataPipe tarafından 24 saat
 ## 6. Pilottan önce kontrol listesi
 
 - [ ] Yurt dışı fiyatı kullanılan kalemler için Türkiye teklifi alındı ya da bilerek bırakıldı; `paket_tablosu.py` uyarı vermiyor.
-- [ ] 16 kartın gerçek görselleri `img/` klasöründe ve `stimuli.js`teki `gorsel` alanları doğru.
+- [x] 16 kartın görselleri `img/` klasöründe (ekibin Drive klasöründen, 30.10.2026).
+- [ ] T4 (alüminyum tavan) görseli beyaz renkli bir uygulamayla değiştirildi mi? Şu anki görsel aynı serinin ahşap tonlu rengi.
 - [ ] LCA uzmanı karbon değerlerini kontrol etti (raporun "LCA uzmanına sorulacaklar" bölümü).
 - [ ] `config.js` içinde köşeli parantezli alan kalmadı.
 - [ ] Onam metni etik kurulun onayladığı metinle birebir aynı.

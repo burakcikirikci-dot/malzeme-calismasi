@@ -141,7 +141,7 @@ window.KARTLAR = {
           "karbon_m2": 1.6,
           "karbon_kaynak": "Vescom EPD ReTHiNK-95127 (EN 15804+A2), 440 g/m², A1–A3 GWP-fossil",
           "doku": "tex-boya",
-          "gorsel": null
+          "gorsel": "img/duvar-d.jpg"
         }
       ]
     },
@@ -235,7 +235,7 @@ window.KARTLAR = {
           "karbon_m2": 4.21,
           "karbon_kaynak": "EGGER kaplı levha EPD EPD-EGG-20200251-IBC2-EN (ortalama 11,57 kg/m²) 19 mm levhanın ≈12,4 kg/m² kütlesine oranlandı, GWP-fossil",
           "doku": "tex-laminat-tezgah",
-          "gorsel": "img/tezgah-a.jpg"
+          "gorsel": "img/masa-a.jpg"
         },
         {
           "kod": "B",
@@ -251,7 +251,7 @@ window.KARTLAR = {
           "karbon_m2": 37.2,
           "karbon_kaynak": "Fundermax EPD EPD-FMX-20240364-IBA1-EN, 10 mm (14,8 kg/m²) değeri 12 mm'ye kalınlık oranıyla dönüştürüldü, GWP-fossil",
           "doku": "tex-porselen",
-          "gorsel": "img/tezgah-b.jpg"
+          "gorsel": "img/masa-b.jpg"
         },
         {
           "kod": "C",
@@ -267,7 +267,7 @@ window.KARTLAR = {
           "karbon_m2": 7.79,
           "karbon_kaynak": "MUADİL: Kastamonu Entegre MDF EPD (yerli, EN 15804+A2, GWP-fossil), 18 mm. Listede önerilen mobilya linolyumunun bağımsız doğrulanmış EPD'si olmadığından değiştirildi",
           "doku": "tex-laminat-parke",
-          "gorsel": "img/duvar-c.jpg"
+          "gorsel": "img/masa-c.jpg"
         },
         {
           "kod": "D",
@@ -283,7 +283,7 @@ window.KARTLAR = {
           "karbon_m2": 8.86,
           "karbon_kaynak": "Kvadrat Really EPD MD-23096-EN_rev2, 18 mm, A1–A3 GWP-fossil",
           "doku": "tex-boya",
-          "gorsel": null
+          "gorsel": "img/masa-d.jpg"
         }
       ]
     }
