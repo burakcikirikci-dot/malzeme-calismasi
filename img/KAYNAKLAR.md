@@ -1,6 +1,6 @@
 # Kart görsellerinin kaynakları
 
-Görseller iki kaynaktan geliyor: Wikimedia Commons (çoğu ambientCG ve Poly Haven'ın CC0 doku taramaları) ve ekibin Google Drive klasöründeki üretici görselleri. Hepsi
+Görseller üç kaynaktan geliyor: Wikimedia Commons (çoğu ambientCG ve Poly Haven'ın CC0 doku taramaları), Pexels (Pexels lisansı: ücretsiz, kaynak gösterimi gerekmez, değiştirilebilir) ve ekibin Google Drive klasöründeki üretici görselleri. Hepsi
 960 × 480 piksele (2:1) kırpıldı. Renk ve kontrast değiştirilmedi.
 
 **Standart (30.10.2026):** her görsel yalnızca malzeme yüzeyini gösterir. Ürün fotoğrafı ya da uygulama fotoğrafının yüzey bölümü kullanıldı; eşya, bitki, kişi, mobilya ve logo kadraj dışında bırakıldı. Amaç, dekore edilmiş fotoğrafların bazı seçeneklere malzemeden bağımsız bir çekicilik katmasını önlemektir. Kırpma betiği: `kirp.py` (deponun dışında, isteğe bağlı).
@@ -17,13 +17,13 @@ Yalnızca deney ekranında gösterilmesi için de kaynağın bu dosyada kayıtl�
 | zemin-d.jpg | Beton görünümlü porselen karo | Z4 | Commons: Concrete_tiles_02 (Charlotte Baglioni / Poly Haven) | CC0. Dikdörtgen karo; kart 60 × 60 kare diyor |
 | duvar-a.jpg | Su bazlı iç cephe boyası | D1 | Commons: Wallpaper001A_8K_Color.png (ambientCG) | CC0. Düz kırık beyaz yüzey; boyalı duvar görünümü |
 | duvar-b.jpg | Kabartmalı PET akustik panel | D2 | Commons: Fabric034_8K_Color.png (ambientCG) | CC0. Gri keçe dokusu; kabartma çizgileri yok. Daha iyisi aranıyor |
-| duvar-c.jpg | Ahşap kaplamalı akustik lamel | D3 | Drive: 02_Urun_Rib_R_panel | **Üretici görseli, değiştirilecek.** |
+| duvar-c.jpg | Ahşap kaplamalı akustik lamel | D3 | Pexels 32507995 (Jan van der Wolf) | Pexels lisansı, kaynak gösterimi gerekmez. Dikey ahşap lameller; ton meşeden sıcak (çam/karaçam) |
 | duvar-d.jpg | Vinil duvar kaplaması | D4 | Commons: Plastered_wall (Amal Kumar / Poly Haven) | CC0. Sıva dokusu; vinilin sıva görünümüne benzer |
-| tavan-a.jpg | Delikli akustik alçı levha | T1 | Drive: 01_Urun_8_18_R | **Üretici görseli, değiştirilecek.** |
+| tavan-a.jpg | Delikli akustik alçı levha | T1 | Pexels 11255124 (Seamlesstextures) | Pexels lisansı. Düzenli dairesel delikli levha; yüzey açık gri metal, kart beyaz boyalı alçı diyor |
 | tavan-b.jpg | Taş yünü akustik tavan paneli | T2 | Commons: OfficeCeiling001_8K_Color.png (ambientCG) | CC0 |
 | tavan-c.jpg | Ahşap yünü akustik panel | T3 | Commons: Holzwolle-Leichtbauplatte_Laibung.JPG (Florian Gerlach) | CC BY-SA 3.0, kırpıldı. Kaynak gösterimi zorunlu. Gri ve iri lifli; kart ince lifli, beyaz diyor |
 | tavan-d.jpg | Çizgisel alüminyum asma tavan | T4 | Drive: 01_84R_SERI_beyaz_degil | Yalnızca lameller (kiriş ve avize dışarıda). **Değiştirilmeli:** aynı seri, ahşap tonlu renk; kart beyaz diyor **Üretici görseli, değiştirilecek.** |
 | masa-a.jpg | Melamin kaplı yonga levha tabla | M1 | Drive: 01_Urun_U702_ST9 | **Üretici görseli, değiştirilecek.** |
 | masa-b.jpg | Kompakt laminat tabla | M2 | Commons: Plastic010_8K_Color.png (ambientCG) | CC0. Düz açık gri yüzey; siyah çekirdek görünmüyor |
 | masa-c.jpg | Meşe kaplamalı MDF tabla | M3 → muadil | Commons: Oak_veneer_01 (Jandre van Heerden / Poly Haven) | CC0 |
-| masa-d.jpg | Geri dönüştürülmüş tekstil tabla | M4 | Drive: 01_Cotton_White_kenar_detayi | Tabla köşesi ve yüzeyi; ürün fotoğrafı **Üretici görseli, değiştirilecek.** |
+| masa-d.jpg | Geri dönüştürülmüş tekstil tabla | M4 | Pexels 5993568 (Kaboompics / Karola G.) | Pexels lisansı. Geri dönüştürülmüş kâğıt yüzeyi; ince renkli benekli kırık beyaz görünüm |

@@ -69,7 +69,7 @@
   var GORSEL_KAYNAKLARI =
     'Linolyum: blahedo, Wikimedia Commons, CC BY-SA 2.5 (kırpıldı). ' +
     'Ahşap yünü panel: Florian Gerlach (Nawaro), Wikimedia Commons, CC BY-SA 3.0 (kırpıldı). ' +
-    'Diğer doku görselleri: ambientCG ve Poly Haven (CC0) ile üretici görselleri.';
+    'Diğer görseller: ambientCG ve Poly Haven (CC0), Pexels (Pexels lisansı) ve üretici görselleri.';
 
   // ---------- jsPsych ----------
   var uzantilar = [];
