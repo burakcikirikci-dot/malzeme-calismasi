@@ -65,6 +65,12 @@
 
   var senaryoSatiri = A.SENARYO.baslik + " · Konsept: " + A.SENARYO.konsept;
 
+  // Lisansı kaynak gösterilmesini isteyen görseller (CC BY / CC BY-SA). Ayrıntı: img/KAYNAKLAR.md
+  var GORSEL_KAYNAKLARI =
+    'Linolyum: blahedo, Wikimedia Commons, CC BY-SA 2.5 (kırpıldı). ' +
+    'Ahşap yünü panel: Florian Gerlach (Nawaro), Wikimedia Commons, CC BY-SA 3.0 (kırpıldı). ' +
+    'Diğer doku görselleri: ambientCG ve Poly Haven (CC0) ile üretici görselleri.';
+
   // ---------- jsPsych ----------
   var uzantilar = [];
   if (!onizleme) {
@@ -76,6 +82,7 @@
         wait_message: '<div class="metin-ekran"><p>Yanıtlarınız kaydediliyor. Lütfen sayfayı kapatmayın.</p></div>',
         done_message: '<div class="metin-ekran"><h1>Teşekkürler</h1><p>Yanıtlarınız kaydedildi. Bu sayfayı kapatabilirsiniz.</p>' +
           '<p class="kucuk">Katılımcı kodunuz: <strong>' + katilimciId + '</strong>. Verilerinizin silinmesini isterseniz bu kodu ' + A.ONAM.eposta + ' adresine iletin.</p>' +
+          '<p class="kucuk">Görsel kaynakları: ' + GORSEL_KAYNAKLARI + '</p>' +
           '</div>',
         on_save: function (sonuc) {
           if (!sonuc.ok) {
