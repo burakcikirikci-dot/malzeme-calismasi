@@ -21,7 +21,7 @@ window.AYARLAR = {
   ONAM: {
     calisma_adi: "Ofis İç Mekânlarında Malzeme Kararları",
     kurum: "Haliç Üniversitesi İç Mimarlık ve Çevre Tasarımı Bölümü",
-    arastirmaci: "[ARAŞTIRMACI ADI]",
+    arastirmaci: "Prof. Dr. Füsun Seçer Kariptaş ve araştırma ekibi",
     eposta: "burakcikirikci@halic.edu.tr",
     etik_kurul: "Haliç Üniversitesi Sosyal ve Beşeri Bilimler Etik Kurulu'nun 21.10.2026 tarihli ve 12/2026 sayılı kararı",
     veri_saklama: "Yanıtlarınız adınız alınmadan, rastgele bir kodla kaydedilir. Veriler DataPipe servisi aracılığıyla araştırmacının Google Drive hesabında saklanır."
