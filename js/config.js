@@ -2,7 +2,7 @@
 window.AYARLAR = {
   // DataPipe panelindeki deneyin kimliği. Boş bırakılırsa sayfa ÖNİZLEME modunda çalışır:
   // veri gönderilmez, grup rastgele atanır, sonda özet ekranda gösterilir.
-  DATAPIPE_ID: "",
+  DATAPIPE_ID: "OTPdcbycRFsw",
 
   // DataPipe'ta "condition assignment" açıksa ve koşul sayısı 2 ise true yapın.
   // 0 = Grup A (geç bilgi), 1 = Grup B (erken bilgi). DataPipe sırayla dağıtır: 0, 1, 0, 1...
