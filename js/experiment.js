@@ -320,7 +320,7 @@
       '<fieldset class="secenekler"><legend>Sürdürülebilirlik veya çevre konulu bir ders aldınız mı?</legend><label><input type="radio" name="cevre_dersi" value="Evet" required> Evet</label><label><input type="radio" name="cevre_dersi" value="Hayır"> Hayır</label><label><input type="radio" name="cevre_dersi" value="Emin değilim"> Emin değilim</label></fieldset>' +
       '<fieldset class="secenekler"><legend>Seçimleriniz hakkında araştırmacıyla 20–25 dakikalık kısa bir görüşme yapmak ister misiniz?</legend>' +
       '<label><input type="radio" name="gorusme" value="Evet" required> Evet, görüşmeye gönüllüyüm</label><label><input type="radio" name="gorusme" value="Hayır"> Hayır</label>' +
-      '<div id="gorusme-iletisim" hidden><label class="blok">Size ulaşabileceğimiz e-posta adresi <input type="email" name="gorusme_eposta" maxlength="120" autocomplete="email"></label>' +
+      '<div id="gorusme-iletisim" hidden><label class="blok">Size ulaşabileceğimiz e-posta adresi <input type="email" name="gorusme_eposta" maxlength="120" autocomplete="off"></label>' +
       '<p class="kucuk">Adresiniz yalnızca görüşme daveti için kullanılır, yanıtlarınızdan ayrı bir listede tutulur ve çalışma bitince silinir. Adres verdiğinizde yanıtlarınız anonim değil gizli olur: kimliğiniz yalnızca araştırmacı tarafından bilinir, hiçbir yerde açıklanmaz. Her profilden yalnızca birkaç kişi görüşmeye davet edilecektir.</p></div>' +
       '<p class="kucuk">“Hayır” derseniz yanıtlarınız tamamen anonim kalır.</p></fieldset>' +
       '</div>',
