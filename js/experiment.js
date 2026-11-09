@@ -122,7 +122,7 @@
       '<li>Doğru ya da yanlış yanıt yoktur; kendi tasarım yargınızla seçim yapın.</li>' +
       '<li>' + A.ONAM.veri_saklama + '</li>' +
       '<li>Görevin sonunda kısa bir görüşmeye gönüllü olup olmadığınız sorulur. Gönüllü olursanız e-posta adresiniz istenir; bu durumda yanıtlarınız anonim değil gizli tutulur ve adresiniz çalışma bitince silinir. Gönüllü olmak zorunlu değildir.</li>' +
-      '<li>Çalışma ' + A.ONAM.etik_kurul + ' onayı ile yürütülmektedir.</li>' +
+      '<li>Çalışma, ' + A.ONAM.etik_kurul + ' ile onaylanmıştır.</li>' +
       '<li>Sorularınız için: ' + A.ONAM.eposta + '</li></ul>' +
       '<label class="onay"><input type="checkbox" name="onam" value="evet" required> Bilgilendirme metnini okudum, gönüllü olarak katılmayı kabul ediyorum.</label>' +
       '</div>',
@@ -160,7 +160,7 @@
     stimulus: function () {
       var satirlar = YUZEYLER.map(function (y) { return "<tr><td>" + y.ad + "</td><td>" + fmt.format(y.alan_m2) + " m²</td></tr>"; }).join("");
       return '<div class="metin-ekran">' +
-        (onizleme ? '<p class="onizleme-bandi">ÖNİZLEME · ' + (grup === "A" ? "Grup A: karbon bilgisi 2. aşamada" : "Grup B: karbon bilgisi baştan") + ' · fiyatların bir kısmı yurt dışı referansı, görsellerin bir kısmı geçici</p>' : "") +
+        (onizleme ? '<p class="onizleme-bandi">ÖNİZLEME · ' + (grup === "A" ? "Grup A: karbon bilgisi 2. aşamada" : "Grup B: karbon bilgisi baştan") + ' · fiyatların bir kısmı yurt dışı referansı</p>' : "") +
         '<h1>Senaryo: ' + A.SENARYO.baslik + '</h1>' +
         '<p><strong>Kullanıcı:</strong> ' + A.SENARYO.kullanici + '</p>' +
         '<p><strong>Konsept:</strong> ' + A.SENARYO.konsept + '</p>' +

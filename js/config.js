@@ -14,16 +14,16 @@ window.AYARLAR = {
 
   SENARYO: {
     baslik: "120 m² ofis",
-    konsept: "[KONSEPT METNİ: örneğin 'Odaklanmayı destekleyen, sakin ve sıcak bir çalışma ortamı']",
-    kullanici: "[KULLANICI TANIMI: örneğin '12 kişilik bir mimarlık ofisi']"
+    konsept: "Odaklanmayı destekleyen, sakin ve sıcak bir çalışma ortamı",
+    kullanici: "12 kişilik bir mimarlık ofisi"
   },
 
   ONAM: {
     calisma_adi: "Ofis İç Mekânlarında Malzeme Kararları",
-    kurum: "[ÜNİVERSİTE / BÖLÜM]",
+    kurum: "Haliç Üniversitesi İç Mimarlık ve Çevre Tasarımı Bölümü",
     arastirmaci: "[ARAŞTIRMACI ADI]",
-    eposta: "[E-POSTA]",
-    etik_kurul: "[ETİK KURUL ADI], karar tarihi [GG.AA.YYYY], karar no [NO]",
+    eposta: "burakcikirikci@halic.edu.tr",
+    etik_kurul: "Haliç Üniversitesi Sosyal ve Beşeri Bilimler Etik Kurulu'nun 21.10.2026 tarihli ve 12/2026 sayılı kararı",
     veri_saklama: "Yanıtlarınız adınız alınmadan, rastgele bir kodla kaydedilir. Veriler DataPipe servisi aracılığıyla araştırmacının Google Drive hesabında saklanır."
   }
 };
