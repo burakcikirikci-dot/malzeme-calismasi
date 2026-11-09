@@ -76,7 +76,7 @@ for i in range(arg.n):
         "a1_maliyet": m1, "a1_karbon": round(k1, 2), "a1_karbon_endeks": round((k1 - kmin) / (kmax - kmin), 3), "a1_referans_karbon": round(r1, 2),
         "a2_maliyet": m2, "a2_karbon": round(k2, 2), "a2_karbon_endeks": round((k2 - kmin) / (kmax - kmin), 3), "a2_referans_karbon": round(r2, 2),
         "degisen_yuzey_sayisi": sum(a1[y] != a2[y] for y in YUZEYLER),
-        "toplam_sure_sn": int(rng.normal(1500, 300)),
+        "toplam_sure_sn": int(rng.normal(1050, 200)), "dokunmatik": str(rng.random() < 0.15).lower(),
         "farkindalik": "", "kavrama_dogru": str(rng.random() < 0.7).lower(), "dikkat_gecti": str(rng.random() < 0.96).lower(),
         "sinif": rng.choice(["3", "4"]), "malzeme_dersi": rng.choice(["Evet", "Hayır"], p=[0.85, 0.15]),
         "cevre_dersi": rng.choice(["Evet", "Hayır", "Emin değilim"], p=[0.5, 0.35, 0.15]),

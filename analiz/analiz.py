@@ -79,7 +79,7 @@ def main():
     K = stimuli()
 
     df = pd.read_csv(girdi, encoding="utf-8-sig")
-    for c in ["dikkat_gecti", "kavrama_dogru"] + [f"a{i}_{y}_en_dusuk_karbon" for i in (1, 2) for y in YUZEYLER]:
+    for c in ["dikkat_gecti", "kavrama_dogru", "dokunmatik"] + [f"a{i}_{y}_en_dusuk_karbon" for i in (1, 2) for y in YUZEYLER]:
         if c in df:
             df[c] = bool_sutun(df[c])
     df["B"] = (df["grup"] == "B").astype(int)
@@ -227,6 +227,9 @@ def main():
         return f"- {etiket}: n = {len(xa)}/{len(xb)}, d = {dd2:.2f}, Welch t = {tt:.2f}, p = {fmt_p(pp)}"
     if "kavrama_dogru" in d:
         R.append(h1_satir(d[d.kavrama_dogru == True], "Kavrama sorusunu doğru yanıtlayanlar"))
+    if "dokunmatik" in d and d.dokunmatik.notna().any():
+        R.append(h1_satir(d[d.dokunmatik != True], "Yalnızca bilgisayardan katılanlar (dokunmatik cihazlar çıkarıldı)"))
+        R.append(f"- Dokunmatik cihaz oranı: A {d[d.grup == 'A'].dokunmatik.mean():.0%}, B {d[d.grup == 'B'].dokunmatik.mean():.0%}")
     if arg.farkindalik:
         k = pd.read_csv(arg.farkindalik, encoding="utf-8-sig")
         dk = d.merge(k[["katilimci_id", "farkindalik_dogru"]], on="katilimci_id", how="left")

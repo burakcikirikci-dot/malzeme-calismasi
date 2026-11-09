@@ -22,9 +22,12 @@
 
   // ---------- Ekran kontrolü ----------
   if (!onizleme && window.innerWidth < A.MIN_EKRAN_GENISLIGI) {
-    document.body.innerHTML = '<main class="uyari-ekran"><h1>Lütfen bilgisayardan katılın</h1>' +
-      '<p>Bu çalışmada malzeme kartlarının herkese aynı biçimde görünmesi gerekiyor. ' +
-      'Lütfen bağlantıyı en az ' + A.MIN_EKRAN_GENISLIGI + ' piksel genişliğinde bir bilgisayar ekranında, tarayıcı penceresi tam ekranken açın.</p></main>';
+    document.body.innerHTML = '<main class="uyari-ekran"><h1>Lütfen bilgisayardan ya da yatay tutulan bir tabletten katılın</h1>' +
+      '<p>Bu çalışmada malzeme kartlarının yan yana karşılaştırılabilmesi gerekiyor; bu nedenle telefonla katılım mümkün değildir.</p>' +
+      '<p><strong>Tablet:</strong> cihazı yatay çevirin; sayfa kendiliğinden yenilenecektir.<br>' +
+      '<strong>Bilgisayar:</strong> tarayıcı penceresini tam ekran yapın.</p></main>';
+    // Tablet yatay çevrilince ya da pencere büyütülünce yeniden dene
+    window.addEventListener("resize", function () { if (window.innerWidth >= A.MIN_EKRAN_GENISLIGI) window.location.reload(); });
     return;
   }
 
@@ -99,7 +102,9 @@
     on_finish: function () { if (onizleme) onizlemeSonu(); }
   });
   jsPsych.data.addProperties({
-    katilimci_id: katilimciId, onizleme: onizleme, ekran_genisligi: window.innerWidth, kart_sirasi: kartSirasi,
+    katilimci_id: katilimciId, onizleme: onizleme, ekran_genisligi: window.innerWidth, ekran_yuksekligi: window.innerHeight,
+    dokunmatik: (navigator.maxTouchPoints || 0) > 0 || (window.matchMedia && window.matchMedia("(pointer: coarse)").matches),  // tablet/dokunmatik cihaz (duyarlılık analizi)
+    kart_sirasi: kartSirasi,
     baslangic_zamani: new Date().toISOString(),           // oturum (ders saati) bilgisi için
     deneme: url.has("deneme")                            // araştırmacının kendi denemeleri: linkin sonuna ?deneme
   });
