@@ -116,7 +116,7 @@
       (onizleme ? '<p class="onizleme-bandi">ÖNİZLEME MODU · veri gönderilmez</p>' : "") +
       '<h1>' + A.ONAM.calisma_adi + '</h1>' +
       '<p>Bu çalışma ' + A.ONAM.kurum + ' bünyesinde ' + A.ONAM.arastirmaci + ' tarafından yürütülmektedir. ' +
-      'Çalışmada bir ofis iç mekânı için malzeme seçecek ve birkaç kısa soruyu yanıtlayacaksınız. Toplam süre yaklaşık 30 dakikadır.</p>' +
+      'Çalışmada bir ofis iç mekânı için malzeme seçecek ve birkaç kısa soruyu yanıtlayacaksınız. Toplam süre yaklaşık 15–20 dakikadır.</p>' +
       '<ul><li>Katılım gönüllüdür; istediğiniz anda sayfayı kapatarak ayrılabilirsiniz.</li>' +
       '<li>Katılmak ya da katılmamak hiçbir dersinizin notunu etkilemez.</li>' +
       '<li>Doğru ya da yanlış yanıt yoktur; kendi tasarım yargınızla seçim yapın.</li>' +
